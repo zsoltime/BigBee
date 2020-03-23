@@ -1,0 +1,9 @@
+export const INCREMENT = 'INCREMENT';
+export const DECREMENT = 'DECREMENT';
+export const ADD = 'ADD';
+export const SUBTRACT = 'SUBTRACT';
+export const STORE = 'STORE';
+export const DOUBLESTORE = 'DOUBLESTORE';
+export const TRIPLESTORE = 'TRIPLESTORE';
+export const DELETE = 'DELETE';
+export const MULTIPLY='MULTIPLY';
