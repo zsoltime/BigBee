@@ -106,7 +106,7 @@ const Grid = props => {
             <div className="card-body">
               <h5 className="card-title">Hooks</h5>
               <p className="card-text">
-                A Simple Employee Table with json Data with state managed in hooks,will need to add more functionalities in future
+                A Simple Employee Table with json Data with state managed in hooks
               </p>
               <button onClick={props.hooks} className="btn btn-info btn-sm">
               Hooks

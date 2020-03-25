@@ -27,7 +27,7 @@ class LoginPage extends Component {
         <h1>Defect Tracker</h1>
         <form>
           <div className="form-group ">
-            <label htmlFor="exampleInputEmail1">Email address</label>
+            <label /* style={{color:'blue',fontSize:'20px'}} */ htmlFor="exampleInputEmail1">Email address</label>
             <input
               type="email"
               id="exampleInputEmail1" 
@@ -62,7 +62,6 @@ class LoginPage extends Component {
           Switch to BigBee
         </button>
         </form>
-        
       </div>
     );
   }

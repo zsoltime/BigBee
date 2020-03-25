@@ -2,10 +2,13 @@ import React, { Component } from "react";
 import DefectTable from "./DefectTable";
 import { Link } from "react-router-dom";
 import AddDefect from './AddDefect';
-
+import { defectdata } from './defectData';
 class DetailsPage extends Component {
   state={
-    defectView:true,addDefect:false,data:[],link1:false,link2:false,defect:'defect' ,defectLocked:false
+    defectView:true,addDefect:false,data:[],link1:false,link2:false,defect:'defect'
+  }
+  componentDidMount=()=>{
+    this.setState({data:defectdata()})
   }
   handleMain = () => {
     this.props.history.push("/");
@@ -34,12 +37,6 @@ class DetailsPage extends Component {
   linkHandler2=_=>{
     this.setState({link2:true})
   }
-  defectHandlerr=id=>{
-    const defect = this.state.data.find(d=>d.id === id);
-   // defect=[]
-    this.setState({defectLocked:true}) 
-    //this.setState({defect:'Defect Locked'})
-  }
   render() {
     const{defectView ,addDefect ,data ,link1 ,link2 ,defect ,defectLocked}=this.state;
     console.log(data,'DefectDAta');
@@ -51,7 +48,7 @@ class DetailsPage extends Component {
           <br />
           <Link onClick={this.addDefectHandler}>Add Defect</Link> <Link onClick={this.defectHandler}>View Defects</Link>
           {defectView&&<DefectTable data={data} linkHandler1={this.linkHandler1} linkHandler2={this.linkHandler2}
-          defectHandler={this.defectHandlerr} removeData={this.removeData} link1={link1} link2={link2} defect={defect} defectLocked={defectLocked}/>}
+          defectHandler={this.defectHandlerr} removeData={this.removeData} link1={link1} link2={link2} defect={defect}/>}
           {addDefect&&<AddDefect onAddDefect={this.onAddDefectData}/>}
           <button onClick={this.handleMain} className="btn btn-dark my-5">
             Switch to BigBee

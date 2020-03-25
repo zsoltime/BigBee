@@ -12,6 +12,7 @@ const Index = props => {
     props.history.push('/')
   }
   return (
+    
     <>
       <table class="table">
         <thead class="thead-light">
