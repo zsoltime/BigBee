@@ -1,6 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import shortid from "shortid";
 import DropDown from "../common/Dropdown";
 const DefectTable = props => {
   return (
@@ -39,7 +37,7 @@ const DefectTable = props => {
               <th scope="row">{data.title}</th>
               <td>{data.description}</td>
               <td>{data.priority}</td>
-              <td>open</td>
+          <td>{!props.status?'open':'defectLocked'}</td>
               <td>
                 <button
                   className="btn btn-primary btn-sm"
@@ -49,7 +47,7 @@ const DefectTable = props => {
                 >
                   close
                 </button>{" "}
-                <button className="btn btn-primary btn-sm">
+                <button onClick={()=>props.defectHandler(data.id)} className="btn btn-primary btn-sm">
                   {props.defect}
                 </button>
               </td>
