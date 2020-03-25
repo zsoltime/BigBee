@@ -43,16 +43,17 @@ class DetailsPage extends Component {
     this.setState({ link2: true });
   };
   defectHandler = id => {
-    this.setState((prevState)=>{data:prevState.data.map(item => {
+    this.setState(prevState => ({
+      data: prevState.data.map(item => {
       if (item.id === id) {
         return {
           ...item,
-          status: !item.status
+            status: !item.status,
         };
       }
       return item;
-      
-    })})
+      }),
+    }));
   };
 
   render() {
@@ -63,8 +64,7 @@ class DetailsPage extends Component {
       link1,
       link2,
       defect,
-      status,
-      defectLocked
+      defectLocked,
     } = this.state;
     console.log(data, "DefectDAta");
     return (
@@ -97,7 +97,6 @@ class DetailsPage extends Component {
               link1={link1}
               link2={link2}
               defect={defect}
-              status={status}
             />
           )}
           {addDefect && <AddDefect onAddDefect={this.onAddDefectData} />}

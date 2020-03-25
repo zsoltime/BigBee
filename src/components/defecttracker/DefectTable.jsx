@@ -37,7 +37,7 @@ const DefectTable = props => {
               <th scope="row">{data.title}</th>
               <td>{data.description}</td>
               <td>{data.priority}</td>
-          <td>{!props.status?'open':'defectLocked'}</td>
+              <td>{data.status ? 'open' : 'defectLocked'}</td>
               <td>
                 <button
                   className="btn btn-primary btn-sm"
